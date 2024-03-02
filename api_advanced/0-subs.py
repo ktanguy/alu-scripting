@@ -33,3 +33,12 @@ def number_of_subscribers(subreddit):
 
     # Returns the total subscribers of the subreddit
     return res.json().get('data').get('subscribers')
+# Test the function with an existing subreddit
+existing_subreddit = "python"
+existing_subscribers = number_of_subscribers(existing_subreddit)
+print("Subscribers of r/{}: {}".format(existing_subreddit, existing_subscribers))
+
+# Test the function with a non-existing subreddit
+non_existing_subreddit = "nonexistingsubreddit123"
+non_existing_subscribers = number_of_subscribers(non_existing_subreddit)
+print("Subscribers of r/{}: {}".format(non_existing_subreddit, non_existing_subscribers))
